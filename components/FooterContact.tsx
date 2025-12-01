@@ -52,7 +52,7 @@ const FooterContact: React.FC<FooterContactProps> = ({ onAdminClick }) => {
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-16">
         
-        {/* Top Header Section */}
+ /*      {/* Top Header Section */}
         <div className="mb-12">
             <h2 className="text-4xl md:text-5xl font-serif text-nactax-darkRed font-bold mb-2">
                 Full Service
@@ -135,7 +135,7 @@ const FooterContact: React.FC<FooterContactProps> = ({ onAdminClick }) => {
                 </form>
             </div>
         </div>
-
+*/ 
         {/* Bottom Info Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 pt-8 border-t border-gray-300">
             
