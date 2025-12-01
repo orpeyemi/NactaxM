@@ -81,7 +81,15 @@ const ProductsSection: React.FC = () => {
             By using Wave in conjunction with our services, you can: Keep your bookkeeping organized throughout the year. Provide NACTAX with accurate data for tax preparation and financial statement preparation. Receive strategic financial advice based on real-time numbers. Simplify payroll and other compliance requirements for your business.
           </p>
           <div className="mt-8 text-center">
-             <p className="text-sm font-bold text-nactax-red uppercase tracking-wide">Get Started Today</p>
+             <p className="text-sm font-bold text-nactax-red uppercase tracking-wide"><a 
+              href="https://www.waveapps.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-nactax-red hover:bg-nactax-darkRed text-white text-base md:text-lg font-bold py-4 px-8 rounded shadow-lg transform hover:scale-105 transition-all flex items-center gap-3"
+            >
+              <Download size={24} />
+              [Download Wave Accounting for Free]
+            </a> </p>
           </div>
         </div>
 
