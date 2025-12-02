@@ -7,7 +7,7 @@ const ProductsSection: React.FC = () => {
       {/* Banner */}
       <div className="relative w-full h-[300px] md:h-[400px] flex items-center justify-center bg-gray-900 overflow-hidden">
         <img 
-          src="[![Recommend.png](https://i.postimg.cc/7YmSj806/Recommend.png)](https://postimg.cc/4mHKh08k)" 
+          src="https://i.postimg.cc/7YmSj806/Recommend.png" 
           alt="Calculator and Accounting" 
           className="absolute inset-0 w-full h-full object-cover opacity-40"
         />
