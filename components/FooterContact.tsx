@@ -4,9 +4,10 @@ import { ContactFormSubmission } from '../types';
 
 interface FooterContactProps {
   onAdminClick?: () => void;
+  showContactForm?: boolean;
 }
 
-const FooterContact: React.FC<FooterContactProps> = ({ onAdminClick }) => {
+const FooterContact: React.FC<FooterContactProps> = ({ onAdminClick, showContactForm = true }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -52,92 +53,96 @@ const FooterContact: React.FC<FooterContactProps> = ({ onAdminClick }) => {
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-16">
         
- /*      {/* Top Header Section */}
-        <div className="mb-12">
-            <h2 className="text-4xl md:text-5xl font-serif text-nactax-darkRed font-bold mb-2">
-                Full Service
-            </h2>
-            <h2 className="text-4xl md:text-5xl font-serif text-nactax-darkRed font-bold mb-2">
-                Accounting &
-            </h2>
-             <h2 className="text-4xl md:text-5xl font-serif text-nactax-darkRed font-bold">
-                Tax Firm
-            </h2>
-        </div>
-
-        <div className="flex flex-col lg:flex-row gap-12">
-            
-            {/* Left Text Column */}
-            <div className="lg:w-1/2 text-gray-600 text-sm md:text-base text-justify leading-relaxed font-sans space-y-4">
-                 <p>
-                    NACTAX is a full-service U.S. Accounting and Tax firm providing comprehensive bookkeeping, accounting, and financial reporting services for individuals and businesses. We handle year-end accounting and prepare unaudited financial statements in accordance with U.S. GAAP, helping our clients stay compliant and financially organized.
-                </p>
-                <p>
-                    We prepare a wide range of U.S. tax returns, including federal and state filings for individuals, corporations, partnerships, non-profits, and trusts. Our services also include sales tax filings, W-2 and 1099 preparation, and year-end tax reporting. We support small and mid-sized businesses with strategic tax planning to minimize liabilities and ensure long-term financial health.
-                </p>
+        {showContactForm && (
+          <>
+            {/* Top Header Section */}
+            <div className="mb-12">
+                <h2 className="text-4xl md:text-5xl font-serif text-nactax-darkRed font-bold mb-2">
+                    Full Service
+                </h2>
+                <h2 className="text-4xl md:text-5xl font-serif text-nactax-darkRed font-bold mb-2">
+                    Accounting &
+                </h2>
+                 <h2 className="text-4xl md:text-5xl font-serif text-nactax-darkRed font-bold">
+                    Tax Firm
+                </h2>
             </div>
 
-            {/* Right Form Column */}
-            <div className="lg:w-1/2 bg-gray-50 p-6 rounded-lg border border-gray-200">
-                <div className="mb-6 flex justify-center">
-                     <div className="flex flex-col leading-none">
-                        <h1 className="text-4xl font-extrabold tracking-tighter text-nactax-red border-b-4 border-nactax-red inline-block">
-                        NACTAX
-                        </h1>
-                        <span className="text-[0.6rem] font-bold text-gray-600 tracking-wider uppercase text-center">
-                        Tax, Accounting & Business Support Services
-                        </span>
-                    </div>
+            <div className="flex flex-col lg:flex-row gap-12">
+                
+                {/* Left Text Column */}
+                <div className="lg:w-1/2 text-gray-600 text-sm md:text-base text-justify leading-relaxed font-sans space-y-4">
+                     <p>
+                        NACTAX is a full-service U.S. Accounting and Tax firm providing comprehensive bookkeeping, accounting, and financial reporting services for individuals and businesses. We handle year-end accounting and prepare unaudited financial statements in accordance with U.S. GAAP, helping our clients stay compliant and financially organized.
+                    </p>
+                    <p>
+                        We prepare a wide range of U.S. tax returns, including federal and state filings for individuals, corporations, partnerships, non-profits, and trusts. Our services also include sales tax filings, W-2 and 1099 preparation, and year-end tax reporting. We support small and mid-sized businesses with strategic tax planning to minimize liabilities and ensure long-term financial health.
+                    </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-4">
-                    <div>
-                        <label htmlFor="name" className="block text-xs font-bold text-gray-500 uppercase mb-1">Name</label>
-                        <input 
-                          type="text" 
-                          id="name" 
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          placeholder="Name" 
-                          className="w-full border border-gray-300 p-2 text-sm bg-white" 
-                          required
-                        />
+                {/* Right Form Column */}
+                <div className="lg:w-1/2 bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <div className="mb-6 flex justify-center">
+                         <div className="flex flex-col leading-none">
+                            <h1 className="text-4xl font-extrabold tracking-tighter text-nactax-red border-b-4 border-nactax-red inline-block">
+                            NACTAX
+                            </h1>
+                            <span className="text-[0.6rem] font-bold text-gray-600 tracking-wider uppercase text-center">
+                            Tax, Accounting & Business Support Services
+                            </span>
+                        </div>
                     </div>
-                    <div>
-                        <label htmlFor="email" className="block text-xs font-bold text-gray-500 uppercase mb-1">Email</label>
-                        <input 
-                          type="email" 
-                          id="email" 
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          placeholder="Email" 
-                          className="w-full border border-gray-300 p-2 text-sm bg-white" 
-                          required
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="message" className="block text-xs font-bold text-gray-500 uppercase mb-1">Message</label>
-                        <textarea 
-                          id="message" 
-                          rows={4} 
-                          value={formData.message}
-                          onChange={handleInputChange}
-                          placeholder="Message" 
-                          className="w-full border border-gray-300 p-2 text-sm bg-white"
-                          required
-                        ></textarea>
-                    </div>
-                    <button type="submit" className="bg-[#2a7a8a] text-white px-6 py-2 text-sm font-bold uppercase hover:bg-[#226270] transition-colors w-full md:w-auto">
-                        {status === 'success' ? 'Sent Successfully!' : 'Submit'}
-                    </button>
-                    {status === 'success' && <p className="text-green-600 text-xs mt-2">Thank you! We will get back to you shortly.</p>}
-                    {status === 'error' && <p className="text-red-600 text-xs mt-2">An error occurred. Please try again.</p>}
-                </form>
+
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                        <div>
+                            <label htmlFor="name" className="block text-xs font-bold text-gray-500 uppercase mb-1">Name</label>
+                            <input 
+                              type="text" 
+                              id="name" 
+                              value={formData.name}
+                              onChange={handleInputChange}
+                              placeholder="Name" 
+                              className="w-full border border-gray-300 p-2 text-sm bg-white" 
+                              required
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="email" className="block text-xs font-bold text-gray-500 uppercase mb-1">Email</label>
+                            <input 
+                              type="email" 
+                              id="email" 
+                              value={formData.email}
+                              onChange={handleInputChange}
+                              placeholder="Email" 
+                              className="w-full border border-gray-300 p-2 text-sm bg-white" 
+                              required
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="message" className="block text-xs font-bold text-gray-500 uppercase mb-1">Message</label>
+                            <textarea 
+                              id="message" 
+                              rows={4} 
+                              value={formData.message}
+                              onChange={handleInputChange}
+                              placeholder="Message" 
+                              className="w-full border border-gray-300 p-2 text-sm bg-white"
+                              required
+                            ></textarea>
+                        </div>
+                        <button type="submit" className="bg-[#2a7a8a] text-white px-6 py-2 text-sm font-bold uppercase hover:bg-[#226270] transition-colors w-full md:w-auto">
+                            {status === 'success' ? 'Sent Successfully!' : 'Submit'}
+                        </button>
+                        {status === 'success' && <p className="text-green-600 text-xs mt-2">Thank you! We will get back to you shortly.</p>}
+                        {status === 'error' && <p className="text-red-600 text-xs mt-2">An error occurred. Please try again.</p>}
+                    </form>
+                </div>
             </div>
-        </div>
-*/ 
+          </>
+        )}
+
         {/* Bottom Info Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 pt-8 border-t border-gray-300">
+        <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 ${showContactForm ? 'mt-16 pt-8 border-t border-gray-300' : ''}`}>
             
             {/* About Us */}
             <div>

@@ -74,7 +74,10 @@ const App: React.FC = () => {
         )}
       </main>
 
-      <FooterContact onAdminClick={() => setIsAdminOpen(true)} />
+      <FooterContact 
+        onAdminClick={() => setIsAdminOpen(true)} 
+        showContactForm={currentView !== 'products'}
+      />
       
       {/* Floating Chat Bot */}
       <ChatBot />

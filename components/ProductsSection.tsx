@@ -7,7 +7,7 @@ const ProductsSection: React.FC = () => {
       {/* Banner */}
       <div className="relative w-full h-[300px] md:h-[400px] flex items-center justify-center bg-gray-900 overflow-hidden">
         <img 
-          src="https://postimg.cc/xcNkbZ66][img]https://i.postimg.cc/xcNkbZ66/slide3.png" 
+          src="[![Recommend.png](https://i.postimg.cc/7YmSj806/Recommend.png)](https://postimg.cc/4mHKh08k)" 
           alt="Calculator and Accounting" 
           className="absolute inset-0 w-full h-full object-cover opacity-40"
         />
@@ -81,7 +81,7 @@ const ProductsSection: React.FC = () => {
             By using Wave in conjunction with our services, you can: Keep your bookkeeping organized throughout the year. Provide NACTAX with accurate data for tax preparation and financial statement preparation. Receive strategic financial advice based on real-time numbers. Simplify payroll and other compliance requirements for your business.
           </p>
           <div className="mt-8 text-center">
-             <p className="text-sm font-bold text-nactax-red uppercase tracking-wide"><a 
+             <p className="text-sm font-bold text-nactax-red uppercase tracking-wide"> <a 
               href="https://www.waveapps.com/" 
               target="_blank" 
               rel="noopener noreferrer"
@@ -89,7 +89,7 @@ const ProductsSection: React.FC = () => {
             >
               <Download size={24} />
               [Download Wave Accounting for Free]
-            </a> </p>
+            </a></p>
           </div>
         </div>
 
